@@ -1,0 +1,31 @@
+# Ignore build output directories (Next.js-specific)
+**/.next/**
+**/out/**
+
+# Ignore git hooks
+**/.husky/**
+
+# Ignore node_modules (dependencies)
+**/node_modules/**
+
+# Ignore TypeScript declaration files
+*.d.ts
+
+# Ignore lock files and configuration files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore environment files
+*.env*
+
+# Ignore public/static assets and coverage files
+**/public/**
+**/static/**
+**/coverage/**
+
+# Ignore UI components or generated files (like shadcn components)
+**/components/ui/**
+
+# Ignore Prettier configuration file itself
+.prettierignore
