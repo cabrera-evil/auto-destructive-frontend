@@ -14,7 +14,7 @@ export const create = async (params: RequestParams) => {
 
 export const list = async (params: RequestParams) => {
   const { data: response } = await restService.list(params);
-  return response.data;
+  return response;
 };
 
 export const update = async (params: RequestParams) => {

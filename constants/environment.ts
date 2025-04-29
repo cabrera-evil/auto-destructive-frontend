@@ -14,11 +14,11 @@ export const queryClient = new QueryClient({
       // Important: Refetch on mount if data is stale
       refetchOnMount: true,
       // Treat cache as stale
-      staleTime: 30 * 1000,
+      staleTime: 0,
       // Cache time before garbage collection
-      gcTime: 5 * 60 * 1000,
+      gcTime: 0,
       // Refetch intervals for polling
-      refetchInterval: 30 * 1000,
+      refetchInterval: 2 * 1000,
       // Retry strategy
       retry: (failureCount: number, error: any) => {
         if (error?.response?.status === 404) return false;

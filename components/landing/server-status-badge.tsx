@@ -1,10 +1,13 @@
 'use client';
 
+import { useFetchData } from '@/hooks/use-rest';
 import { motion } from 'framer-motion';
 import { Badge } from '../ui/badge';
 
 export default function ServerStatusBadge() {
-  const status = 'ALIVE';
+  const { status } = useFetchData<any>({
+    path: 'health',
+  });
 
   return (
     <motion.div
@@ -12,13 +15,13 @@ export default function ServerStatusBadge() {
       transition={{ duration: 1, repeat: Infinity }}
     >
       <Badge
-        variant={status === 'ALIVE' ? 'default' : 'destructive'}
+        variant={status === 'success' ? 'default' : 'destructive'}
         className={`
-          ${status === 'ALIVE' ? 'bg-green-500/90 hover:bg-green-500' : ''}
-          text-sm font-semibold px-3 py-1 transition-all
-        `}
+        ${status === 'success' ? 'bg-green-500/90 hover:bg-green-500' : ''}
+        text-sm font-semibold px-3 py-1 transition-all
+      `}
       >
-        {status}
+        {status === 'success' ? 'Online' : 'Offline'}
       </Badge>
     </motion.div>
   );
